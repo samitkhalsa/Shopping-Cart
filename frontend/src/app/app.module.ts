@@ -8,6 +8,17 @@ import { ShoesComponent } from './shoes/shoes.component';
 import { ShoesDetailComponent } from './shoes-detail/shoes-detail.component';
 import { ShoesCreateComponent } from './shoes-create/shoes-create.component';
 import { ShoesEditComponent } from './shoes-edit/shoes-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  MatInputModule,
+  MatPaginatorModule,
+  MatProgressSpinnerModule,
+  MatSortModule,
+  MatTableModule,
+  MatIconModule,
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule } from "@angular/material";
 
 const appRoutes: Routes = [
   {
@@ -45,8 +56,22 @@ const appRoutes: Routes = [
     ShoesEditComponent
   ],
   imports: [
-    BrowserModule.forRoutes(appRoutes),
-    AppRoutingModule
+    RouterModule.forRoot(appRoutes),
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatProgressSpinnerModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

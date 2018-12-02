@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+mport { DataSource } from '@angular/cdk/collections';
+import { FsService } from '../fs.service';
 
 @Component({
   selector: 'app-shoes',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoesComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns = ['name', 'description', 'quantity', 'visibility'];
+  dataSource = new ShoesDataSource(this.fs);
+  
+  constructor(private fs: FsService) { }
 
   ngOnInit() {
   }
