@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Books List</h1>
+</div>
+<div>
+  <p>About Us: Welcome to the worlds greatest online book store. Better than Amazon when they first started out</p>
+</div>
+<div class="pricing-header mx-auto">
+
+
+  <!-- No data shows when their is no student data available -->
+
+  <!-- Showing students data -->
+  <div class="table-responsive" *ngIf="hideWhenNoBook">
+    <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
+      <thead>
+        <tr>
+          <th scope="col">Book ID</th>
+          <th scope="col">Book Name</th>
+          <th scope="col">Quanitity</th>
+          <th scope="col">Click for more info</th>
+          <th scope="col">Rating</th>
+          
+          
+        
+        </tr>
+      </thead>
+      <tbody>
+        <!-- *ngFor loop iterates over Student array and fetch the student's data -->
+        <!-- paginate pipe will add pagination in student's list, it won't show if items are less then 7 -->
+        <tr *ngFor="let book of Books| paginate: { itemsPerPage: 7, currentPage: p }; let i = index;">
+          <th scope="row">{{book.$key}}</th>
+          <td>{{book.name}} </td>
+          
+          <td>{{book.quantity}}</td>
+          <td>
+          
+          <button type="button" class="btn btn-primary" (click)="parentModal.show()">More Info</button>
+<div class="modal fade" bsModal #parentModal="bs-modal" tabindex="-1" role="dialog" aria-labelledby="dialog-nested-name1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-nested-name1" class="modal-title pull-left">Description: {{book.description}}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="parentModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4 id="dialog-nested-price" class="modal-title pull-left">Price: $ {{book.price}}</h4>
+        <button type="button" class="btn btn-primary" (click)="childModal.show()">Add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+          </td>
+          <td>{{book.rating}}</td>
+          
+          <td class="text-center action-block">
+           
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Pagination -->
+  <pagination-controls (pageChange)="p = $event" autoHide="true" responsive="true"></pagination-controls>
+</div>
