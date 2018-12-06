@@ -50,6 +50,9 @@ export class EditBookComponent implements OnInit {
   get price() {
     return this.editForm.get('price');
   }
+  get rating() {
+    return this.editForm.get('rating');
+  }
 
   // Contains Reactive Form logic
   updateBookData() {
@@ -58,7 +61,8 @@ export class EditBookComponent implements OnInit {
       description: [''],
       view: [''],
       quantity: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
-      price: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
+      price: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+       rating: ['', [Validators.required, Validators.pattern('^[0-5]+$')]]
     })
   }
 

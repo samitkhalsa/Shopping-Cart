@@ -32,7 +32,8 @@ export class AddBookComponent implements OnInit {
       description: [''],
       view: [''],
       quantity: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
-      price: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
+      price: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+      rating: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
     })  
   }
 
@@ -55,6 +56,9 @@ export class AddBookComponent implements OnInit {
   
   get price() {
     return this.bookForm.get('price');
+  }
+  get rating() {
+    return this.bookForm.get('rating');
   }
 
   // Reset student form's values

@@ -5,9 +5,9 @@ import { ToastrService } from 'ngx-toastr';      // Alert message using NGX toas
 
 
 @Component({
-  selector: 'app-book-list-user',
-  templateUrl: './book-list-user.component.html',
-  styleUrls: ['./book-list-user.component.css']
+  selector: 'app-book-list-auth-user',
+  templateUrl: './book-list-auth-user.component.html',
+  styleUrls: ['./book-list-auth-user.component.css']
 })
 
 export class BookListAuthUserComponent implements OnInit {

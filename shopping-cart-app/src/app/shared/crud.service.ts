@@ -20,7 +20,8 @@ export class CrudService {
       description: book.description,
       view: book.view,
       quantity: book.quantity,
-      price: book.price
+      price: book.price,
+      rating: book.rating
     })
   }
 
@@ -32,7 +33,7 @@ export class CrudService {
 
   // Fetch Students List
   GetBooksList() {
-    this.booksRef = this.db.list('books-list');
+    this.booksRef = this.db.list('books-list',ref => ref.orderByChild('rating'));
     return this.booksRef;
   }  
 
@@ -43,7 +44,9 @@ export class CrudService {
       description: book.description,
       view: book.view,
       quantity: book.quantity,
-      price: book.price
+      price: book.price,
+      rating: book.rating
+      
     })
   }  
 

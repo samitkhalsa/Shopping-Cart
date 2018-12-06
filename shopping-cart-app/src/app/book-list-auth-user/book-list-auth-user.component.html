@@ -51,7 +51,25 @@
     </div>
   </div>
 </div>
- 
+<div class="modal fade" bsModal #childModal="bs-modal" tabindex="-1" role="dialog" aria-labelledby="dialog-nested-name2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-nested-name2" class="modal-title pull-left">Add item to cart?</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="childModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <br>
+        <div class="form-group text-right">
+              <button type="button" class="btn btn-primary" (click) = "addToCart()" >Add To Cart</button>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
           </td>
           <td>{{book.rating}}</td>
           
